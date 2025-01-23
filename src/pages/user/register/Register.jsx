@@ -89,7 +89,7 @@ export default function Register() {
           <Form.Control type="text" placeholder="" {...register('password', { required: 'Password is required' })} />
           {errors.password ? <div className='text-danger'>{errors.password.message}</div> : null}
         </FloatingLabel>
-        <Button type='submit' variant="primary">
+        <Button type='submit' variant="primary" disabled={isLoading}>
           {isLoading ? 'Loading...' : 'Register'}
         </Button>
       </Form>
