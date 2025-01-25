@@ -1,0 +1,47 @@
+:root {
+    --mainColor: #CC0D39;
+    --secColor: #F7941F;
+    --secLightColor: #FEEB9D;
+    --headerColor: #FFFAF3;
+}
+
+.userNavbar {
+    background-color: var(--secLightColor);
+}
+.hight {
+    height: 746px;
+}
+.register-page .registerForm , .login-page .loginForm {
+    gap: 40px;
+    background-color: var(--headerColor);
+}
+
+.register-page .registerForm h1 , .login-page .loginForm h1 {
+    font-size: 55px;
+}
+
+.register-page .registerForm h3 , .login-page .loginForm h3 {
+    font-size: 20px;
+}
+
+.register-page input , .login-page .loginForm input {
+    width: 350px;
+    background-color: var(--secColor);
+}
+
+.register-page form button , .login-page .loginForm form button {
+    background-color: #13172B;
+    width: 50%;
+    padding: 10px 20px;
+    color: white;
+}
+
+.register-page form button:hover , .login-page .loginForm form button:hover{
+    background-color: var(--secColor);
+}
+
+.register-page .registerForm .login-btn .btn , .login-page .loginForm .login-btn .btn  {
+    padding: 10px 20px;
+    background-color: #13172B;
+    color: white;
+}

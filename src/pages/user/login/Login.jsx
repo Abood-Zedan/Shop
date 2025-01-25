@@ -4,24 +4,22 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
+import registerImg from '../../../assets/images/istockphoto.webp'
+import { Nav } from 'react-bootstrap';
 
 export default function Login() {
 
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
-  const registerUser = async (value) => {
+  const loginUser = async (value) => {
     setIsLoading(true);
     try {
       const response = await axios.post(`https://ecommerce-node4.onrender.com/auth/signin`, value)
       if (response.status === 200) {
-        navigate('/')
-      }
-      console.log(response)
-    } catch (error) {
-        toast.error(`${error.response.data.message}`, {
+        toast.success('You have successfully logged in', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -31,7 +29,23 @@ export default function Login() {
           progress: undefined,
           theme: "dark",
           transition: Bounce,
-          })
+        });
+        localStorage.setItem('userToken', response.data.token);
+        navigate('/')
+      }
+      console.log(response)
+    } catch (error) {
+      toast.error(`${error.response.data.message}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      })
     } finally {
       setIsLoading(false);
     }
@@ -39,27 +53,39 @@ export default function Login() {
 
   return (
     <>
+      <section className='login-page d-flex 100vh hight'>
+        <div className='loginForm w-50 d-flex flex-column justify-content-center align-items-center'>
+          <h1>Shop</h1>
+          <h2 className='text-center'>Login</h2>
+          <Form onSubmit={handleSubmit(loginUser)} className='d-flex flex-column'>
+            <FloatingLabel
+              controlId="floatingInput"
+              label="email"
+              className="mb-3">
+              <Form.Control type="email" placeholder="" {...register('email', { required: 'Email is required' })} />
+              {errors.email ? <div className='text-danger'>{errors.email.message}</div> : null}
+            </FloatingLabel>
 
-      <Form onSubmit={handleSubmit(registerUser)}>
-        <FloatingLabel
-          controlId="floatingInput"
-          label="email"
-          className="mb-3">
-          <Form.Control type="email" placeholder="" {...register('email', { required: 'Email is required' })} />
-          {errors.email ? <div className='text-danger'>{errors.email.message}</div> : null}
-        </FloatingLabel>
-
-        <FloatingLabel
-          controlId="floatingInput"
-          label="password"
-          className="mb-3">
-          <Form.Control type="text" placeholder="" {...register('password', { required: 'Password is required' })} />
-          {errors.password ? <div className='text-danger'>{errors.password.message}</div> : null}
-        </FloatingLabel>
-        <Button type='submit' variant="primary" disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'Login'}
-        </Button>
-      </Form>
+            <FloatingLabel
+              controlId="floatingInput"
+              label="password"
+              className="mb-3">
+              <Form.Control type="text" placeholder="" {...register('password', { required: 'Password is required' })} />
+              {errors.password ? <div className='text-danger'>{errors.password.message}</div> : null}
+            </FloatingLabel>
+            <Button type='submit' variant="primary" disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Login'}
+            </Button>
+          </Form>
+          <div className='login-btn d-flex flex-column justify-content-center align-items-center'>
+            <h3>Do you have an account?</h3>
+            <Nav.Link className='btn' as={Link} to={'/register'}>Register</Nav.Link>
+          </div>
+        </div>
+        <dev className='img w-50 h-100'>
+          <img src={registerImg} alt="" className='w-100 h-100' />
+        </dev>
+      </section>
     </>
   )
 }
