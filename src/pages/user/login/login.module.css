@@ -1,0 +1,46 @@
+/* Start Login page */
+.login_page .loginForm {
+    gap: 40px;
+    background-color: var(--headerColor);
+}
+
+.login_page .loginForm h1 {
+    font-size: 55px;
+}
+
+.login_page .loginForm h3 {
+    font-size: 20px;
+}
+
+.login_page .loginForm input {
+    width: 350px;
+    background-color: var(--secColor);
+}
+
+.login_page .loginForm form button {
+    background-color: var(--darkColor);
+    width: 50%;
+    padding: 10px 20px;
+    color: white;
+}
+
+.login_page .loginForm form button:hover {
+    background-color: var(--secColor);
+}
+
+.login_page .loginForm .login_btn .btn {
+    padding: 10px 20px;
+    background-color: var(--darkColor);
+    color: white;
+    border-radius: 5px;
+}
+
+.login_page .forgot_password {
+    width: 47%;
+}
+.login_page .forgot_password a {
+    text-decoration: none;
+    color: var(--darkColor);
+}
+
+/* End Login page */

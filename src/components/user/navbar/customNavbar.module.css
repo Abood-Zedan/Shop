@@ -1,0 +1,51 @@
+/* Start User navber */
+.userNavbar {
+    background-color: var(--secLightColor);
+}
+.userNavbar a {
+    color: var(--darkColor);
+}
+.userNavbar .text {
+    position: relative;
+}
+
+.userNavbar .text::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: -18%;
+    width: 1px;
+    height: 60%;
+    background: black;
+}
+
+.userNavbar .text::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: -17%;
+    width: 1px;
+    height: 60%;
+    background: black;
+}
+
+.userNavbar .deals {
+    color: var(--mainColor);
+    font-weight: 500;
+}
+
+.userNavbar .star i {
+    font-size: 12px;
+}
+.userNavbar .cart span {
+    top: 5px;
+    left: 25px;
+}
+
+.userNavbar .profile button {
+    color: var(--darkColor);
+    background-color: var(--secLightColor);
+    border: none;
+    padding: 0;
+}
+/* End User navber */

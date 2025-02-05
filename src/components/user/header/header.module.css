@@ -1,0 +1,59 @@
+/* Start Header */
+.header {
+    padding: 0 40px;
+}
+
+.header .text h1 {
+    font-size: 60px;
+    line-height: 90px;
+}
+
+.header .text h1 span {
+    background: red;
+    border-radius: 100px 10px 10px 100px;
+    padding: 0 8px 5px;
+    background-color: var(--secLightColor);
+}
+
+.header .text p {
+    color: #5E626F;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+.header .text .currency {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.header .text button {
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 24px;
+    background-color: var(--darkColor);
+    transition: 0.5s;
+}
+
+.header .text button:hover {
+    background-color: var(--mainColor);
+    transition: 0.5s
+}
+
+.header .img {
+    background-image: url(../../../assets/images/header/hero-one-shape.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+}
+
+.header .img img {
+    width: 65%;
+    border-radius: 40px;
+}
+
+.hight {
+    height: 746px;
+}
+
+/* End Header */

@@ -1,0 +1,63 @@
+table th,
+table td {
+    background-color: #FFFAF3 !important;
+    padding: 20px !important;
+    border-bottom: 1px solid var(--secLightColor);
+}
+
+.cart tbody td {
+    width: 400px;
+    font-weight: 700;
+}
+
+.cart tbody img {
+    width: 25%;
+}
+
+.cart tbody a {
+    text-decoration: none;
+    color: var(--darkColor);
+}
+
+.cart tbody a:hover {
+    text-decoration: none;
+    color: var(--mainColor);
+}
+
+.cart tbody .quantity {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    border: 1px solid #AEB0B6;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+.cart tbody .quantity button {
+    border: none;
+    background: transparent;
+    color: black;
+    padding: 7px 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.cart tbody .remove {
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid #AEB0B6;
+    color: var(--darkColor);
+}
+.cart .shoping_btn {
+    padding: 20px;
+}
+.cart .shoping_btn button {
+    padding: 20px 30px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: var(--darkColor);
+    transition: 0.5s;
+}
+.cart .shoping_btn button:hover {
+    background-color: var(--mainColor);
+    transition: 0.5s;
+}

@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
 import registerImg from '../../../assets/images/istockphoto.webp'
 import { Nav } from 'react-bootstrap';
+import style from './register.module.css'
 
 export default function Register() {
 
@@ -66,12 +67,12 @@ export default function Register() {
 
   return (
     <>
-      <section className='register-page d-flex 100vh hight'>
-        <dev className='img w-50 h-100'>
+      <section className={`${style.register_page} d-flex vh-100`}>
+        <div className='img w-50 h-100'>
           <img src={registerImg} alt="" className='w-100 h-100' />
-        </dev>
-        <dev className='registerForm w-50 d-flex flex-column justify-content-center align-items-center'>
-          <h1 className='fw-bold'>Shop</h1>
+        </div>
+        <div className={`${style.registerForm} w-50 d-flex flex-column justify-content-center align-items-center`}>
+          <h1 className='fw-bold'>Zedan-Shop</h1>
           <h2>Create an account</h2>
           <Form onSubmit={handleSubmit(registerUser)} className=' d-flex flex-column'>
             <FloatingLabel
@@ -101,11 +102,11 @@ export default function Register() {
               {isLoading ? 'Loading...' : 'Register'}
             </Button>
           </Form>
-          <div className='login-btn d-flex flex-column justify-content-center align-items-center'>
+          <div className={`${style.login_btn} d-flex flex-column justify-content-center align-items-center`}>
             <h3>Do you have an account?</h3>
-            <Nav.Link className='btn' as={Link} to={'/login'}>Login</Nav.Link>
+            <Nav.Link className={`${style.btn}`} as={Link} to={'/auth/login'}>Login</Nav.Link>
           </div>
-        </dev>
+        </div>
       </section>
     </>
   )

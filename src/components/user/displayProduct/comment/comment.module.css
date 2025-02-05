@@ -1,0 +1,39 @@
+.comment {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 35px;
+}
+.comment .form {
+    width: 58%;
+}
+.comment .form .form_floating  {
+    width: calc( (100% - 24px) / 2 );
+}
+
+.comment input , .comment textarea {
+    background-color: #FFFAF3;
+}
+
+.comment .form_control:focus , floating>.form_control:focus~label {
+    background-color: #FFFAF3;
+}
+
+.comment .form_floating>label {
+    color: #5E626F;
+}
+
+.comment button {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 20px 40px;
+    line-height: 16px;
+    border-radius: 50px;
+    background-color: var(--darkColor);
+    transition: all 0.3s ease-in;
+}
+.comment button:hover {
+    background-color: var(--mainColor);
+    transition: all 0.3s ease-in;
+}
+
+/* End Style */

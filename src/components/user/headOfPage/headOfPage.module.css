@@ -1,0 +1,37 @@
+/* Start Head of the page */
+.head {
+    background-image: url(../../../assets/images/head-page/men_hero.jpg);
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.head .cruved {
+    width: 5%;
+    align-self: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+
+.head .stars {
+    width: 5%;
+    align-self: center;
+    position: absolute;
+    top: 35%;
+    right: 10%;
+}
+
+.head h1 {
+    font-size: 55px;
+}
+
+.head p {
+    margin-bottom: 100px;
+}
+
+/* End  Head of the page */
