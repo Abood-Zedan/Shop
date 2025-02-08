@@ -1,0 +1,32 @@
+.content {
+    padding: 23px 25px 19px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.5s ease-out 0s;
+    position: relative;
+}
+
+.content:hover {
+    border-color: var(--darkColor);
+    transition: all 0.5s ease-out 0s;
+}
+
+.content h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content .number {
+    background-color: #FEEB9D;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    width: 40px;
+    height: 56px;
+    border-radius: 0px 0px 100px 100px;
+    transform: translateY(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}

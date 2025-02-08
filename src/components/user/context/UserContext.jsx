@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const UserContext = createContext();
 
-const UserContextProvider = ({ Children }) => {
+const UserContextProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +29,7 @@ const UserContextProvider = ({ Children }) => {
         }
     }
     return <UserContext.Provider value={{ user, isLoading }}>
-        {Children}
+        {children}
     </UserContext.Provider>
 }
 

@@ -2,13 +2,23 @@ import { Dropdown, NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import style from './customNavbar.module.css';
 import { CartContext } from '../context/CartContext';
 import { useContext } from 'react';
 export default function CustomNavbar() {
 
     const { cartCount } = useContext(CartContext);
+    const token = localStorage.getItem('userToken');
+    const navigat = useNavigate();
+
+    const userLogin = () => {
+        navigat('/auth/login')
+    }
+    const userLogout = () => {
+        localStorage.removeItem('userToken');
+        navigat('/auth/login')
+    }
 
     return (
         <>
@@ -26,7 +36,7 @@ export default function CustomNavbar() {
                             </NavDropdown>
                             <Nav.Link as={Link} to={'/Login'} className='fw-semibold'>Blog</Nav.Link>
                             <Nav.Link as={Link} to={'/Login'} className='fw-semibold'>About As</Nav.Link>
-                            <Nav.Link as={Link} to={'/Login'} className='fw-semibold'>Contact</Nav.Link>
+                            <Nav.Link as={Link} to={'/contact'} className='fw-semibold'>Contact</Nav.Link>
                             <Nav.Link as={Link} to={'/auth/Login'} className='fw-semibold'>Login</Nav.Link>
                         </Nav>
                         <Nav className='gap-4 align-items-center'>
@@ -48,8 +58,8 @@ export default function CustomNavbar() {
                                     <i className="fa-solid fa-user"></i>
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className={`${style.dropdown_menu}`}>
-                                        <Dropdown.Item as={Link} to={'profile'}>Profile</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">LogOut</Dropdown.Item>
+                                        <Dropdown.Item as={Link} to={'profile/userInfo'}>Profile</Dropdown.Item>
+                                        <Dropdown.Item onClick={token? ()=>{userLogout} : ()=>{userLogin}}  >{token ? 'LogOut': 'Login'}</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                         </Nav>

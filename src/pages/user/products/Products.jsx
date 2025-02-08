@@ -6,7 +6,6 @@ import DisplayProducts from '../../../components/user/displayProducts/DisplayPro
 export default function Products() {
 
     const {data , isLoading} = useFetch(`https://ecommerce-node4.onrender.com/products?limit=10`)
-    console.log(data)
     if(isLoading){
         return <LoadingPage/>
     }

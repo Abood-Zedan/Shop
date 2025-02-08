@@ -1,0 +1,44 @@
+.teamInfo:nth-last-of-type(2) {
+    border-bottom: 1px solid var(--secLightColor);
+    border-top: 1px solid var(--secLightColor);
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.teamInfo .infoItem h3 {
+    font-size: 24px;
+    color: var(--mainColor);
+    font-weight: 700;
+}
+.teamInfo .infoItem p , .teamInfo a {
+    font-size: 20px;
+    color: var(--darkColor);
+    font-weight: 500;
+    transition: 0.6s;
+}
+.teamInfo a {
+    text-decoration: none;
+}
+.teamInfo a:hover {
+    color: var(--mainColor);
+    transition: 0.6s;
+}
+.contact {
+    margin-top: 100px;
+}
+.contact .userInfo .input {
+    width: 49% !important;
+}
+.contact input , .contact textarea {
+    padding: 10px 15px;
+}
+.contact button {
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 50px;
+    background-color: var(--darkColor);
+    transition: 0.6s;
+}
+.contact button:hover {
+    background-color: var(--mainColor);
+    transition: 0.6s;
+}

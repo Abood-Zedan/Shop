@@ -18,7 +18,9 @@ import Profile from './pages/user/profile/Profile'
 import UserInfo from './pages/user/profile/UserInfo'
 import Orders from './pages/user/profile/Orders'
 import UserContextProvider from './components/user/context/UserContext'
-import SendCode from './pages/user/sendCode/SendCode'
+import SendCode from './pages/user/forgotPassword/SendCode'
+import ForgotPassword from './pages/user/forgotPassword/ForgotPassword'
+import Contact from './pages/user/contact/Contact'
 
 
 export default function App() {
@@ -39,6 +41,10 @@ export default function App() {
         {
           path: 'sendCode',
           element: <SendCode/>
+        },
+        {
+          path: 'forgotPassword',
+          element: <ForgotPassword/>
         },
       ]
     },
@@ -100,6 +106,10 @@ export default function App() {
             },
           ]
         },
+        {
+          path: 'contact',
+          element: <Contact/>
+        },
       ]
     },
     {
@@ -109,12 +119,12 @@ export default function App() {
   ])
   return (
     <>
-      {/* <UserContextProvider> */}
+      <UserContextProvider>
         <CartContextProvider>
           <ToastContainer />
           <RouterProvider router={router} />
         </CartContextProvider>
-      {/* </UserContextProvider> */}
+      </UserContextProvider>
     </>
   )
 }

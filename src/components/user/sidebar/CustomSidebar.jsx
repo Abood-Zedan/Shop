@@ -1,11 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
+import { RiExpandRightLine } from "react-icons/ri";
+import { RiContractLeftLine } from "react-icons/ri";
+import { FaRegAddressCard } from "react-icons/fa";
+import { SiShopee } from "react-icons/si";
+
+
+import style from './sidebar.module.css'
 
 export default function CustomSidebar() {
+
+    const [isCollapsed, setISCollapsed] = useState(false);
+    const [isUserInfoActive, setIsUserInfoActive] = useState(``);
+    const [isOrdersActive, setIsOrdersActive] = useState(``);
+
+    const userInfo = () => {
+        setIsUserInfoActive(`active`);
+        setIsOrdersActive(``);
+    }
+    const orders = () => {
+        setIsUserInfoActive(``);
+        setIsOrdersActive(`active`);
+    }
+
     return (
         <>
-            <Sidebar className={`vh-100`}>
+            <Sidebar collapsed={isCollapsed} className={`vh-100 ${style.sidebar}`}>
+                <div className={`d-flex justify-content-end align-items-center`}>
+                    <button onClick={() => setISCollapsed(!isCollapsed)}>
+                        {isCollapsed ? <RiExpandRightLine /> : <RiContractLeftLine />}
+                    </button>
+                </div>
                 <Menu
                     menuItemStyles={{
                         button: {
@@ -18,8 +44,8 @@ export default function CustomSidebar() {
                         },
                     }}
                 >
-                    <MenuItem component={<Link to="userInfo" />}> userInfo</MenuItem>
-                    <MenuItem component={<Link to="orders" />}> Orders</MenuItem>
+                    <MenuItem onClick={()=>{userInfo()}}  component={<Link to="userInfo" />}><div className={isUserInfoActive}><FaRegAddressCard /> userInfo</div></MenuItem>
+                    <MenuItem onClick={()=>{orders()}} className={isOrdersActive} component={<Link to="orders" />}><SiShopee /> Orders</MenuItem>
                 </Menu>
             </Sidebar>
         </>

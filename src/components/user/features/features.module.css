@@ -1,0 +1,28 @@
+.row {
+    border: 1px dashed #AEB0B6;
+    border-radius: 20px;
+    padding: 25px 20px;
+    background-color: #fff;
+}
+
+.icon {
+    font-size: 26px;
+    border: 1px solid;
+    border-radius: 50%;
+    height: 60px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info h3 {
+    font-size: 18px;
+}
+
+.info p {
+    font-size: 14px;
+}
+.border {
+    border-right: 1px dashed black;
+}

@@ -6,11 +6,11 @@ import { Col, Row } from 'react-bootstrap'
 export default function Profile() {
     return (
         <>
-            <Row className={`gap-3`}>
+            <Row className={``}>
                 <Col md={2}>
                     <CustomSidebar />
                 </Col>
-                <Col md={9}>
+                <Col md={10}>
                     <Outlet />
                 </Col>
             </Row>

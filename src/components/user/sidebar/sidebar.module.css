@@ -1,0 +1,16 @@
+.sidebar {
+    background-color: var(--secLightColor);
+}
+
+.sidebar button {
+    border: none;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.active {
+    background-color: var(--mainColor);
+    color: #fff;
+}

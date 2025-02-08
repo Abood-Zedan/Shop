@@ -66,7 +66,6 @@ export default function Login() {
               <Form.Control type="email" placeholder="" {...register('email', { required: 'Email is required' })} />
               {errors.email ? <div className='text-danger'>{errors.email.message}</div> : null}
             </FloatingLabel>
-
             <FloatingLabel
               controlId="floatingInput"
               label="password"
