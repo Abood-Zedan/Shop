@@ -44,8 +44,8 @@ export default function CustomSidebar() {
                         },
                     }}
                 >
-                    <MenuItem onClick={()=>{userInfo()}}  component={<Link to="userInfo" />}><div className={isUserInfoActive}><FaRegAddressCard /> userInfo</div></MenuItem>
-                    <MenuItem onClick={()=>{orders()}} className={isOrdersActive} component={<Link to="orders" />}><SiShopee /> Orders</MenuItem>
+                    <MenuItem onClick={() => { userInfo() }} component={<Link to="userInfo" />}><div className={isUserInfoActive}><FaRegAddressCard /> UserInfo</div></MenuItem>
+                    <MenuItem onClick={() => { orders() }} className={isOrdersActive} component={<Link to="orders" />}><SiShopee /> Orders</MenuItem>
                 </Menu>
             </Sidebar>
         </>

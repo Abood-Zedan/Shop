@@ -1,3 +1,11 @@
+.row {
+    flex-wrap: nowrap;
+}
+.row .col {
+    width: fit-content;
+    padding: 0 2px;
+}
+
 .userInfo .icons button {
     border-radius: 50px;
     display: flex;
@@ -10,11 +18,13 @@
     border-color: var(--borderColor);
     transition: 0.6s;
 }
+
 .userInfo .icons button:last-of-type {
     background-color: var(--darkColor);
     color: #fff;
     transition: 0.6s;
 }
+
 .userInfo .icons button:last-of-type:hover {
     background-color: #fff;
     color: var(--darkColor);
@@ -42,4 +52,43 @@
 
 .userInfo .details label {
     width: 8%;
+    font-size: 16px;
+    font-weight: 500;
+}
+.userInfo .details input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.userInfo .details .icon {
+    background: #e9ecef;
+    padding: 10px 5px;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.userInfo .details .icon:hover {
+    background: #dee2e6;
+    border-color: #ced4da;
+    transition: 0.6s;
+}
+.userInfo .details .update {
+    width: fit-content;
+    background: #4CAF50;
+    color: #fff;
+    border-color: #4CAF50;
+    transition: 0.6s;
+}
+
+.userInfo .details .update:hover {
+    background: #45a049;
+    transition: 0.6s;
 }

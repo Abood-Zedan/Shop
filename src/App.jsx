@@ -7,7 +7,6 @@ import Register from './pages/user/register/Register'
 import Home from './pages/user/home/Home'
 import { ToastContainer } from 'react-toastify'
 import UserLayout from './Layouts/UserLayout'
-import Categories from './pages/user/categories/categories'
 import ProductsCategories from './pages/user/products/ProductsCategories'
 import Products from './pages/user/products/Products'
 import Product from './pages/user/products/Product'
@@ -21,6 +20,7 @@ import UserContextProvider from './components/user/context/UserContext'
 import SendCode from './pages/user/forgotPassword/SendCode'
 import ForgotPassword from './pages/user/forgotPassword/ForgotPassword'
 import Contact from './pages/user/contact/Contact'
+import Categories from './pages/user/categories/categories'
 
 
 export default function App() {

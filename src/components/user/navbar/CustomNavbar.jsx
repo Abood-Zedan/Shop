@@ -59,7 +59,7 @@ export default function CustomNavbar() {
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className={`${style.dropdown_menu}`}>
                                         <Dropdown.Item as={Link} to={'profile/userInfo'}>Profile</Dropdown.Item>
-                                        <Dropdown.Item onClick={token? ()=>{userLogout} : ()=>{userLogin}}  >{token ? 'LogOut': 'Login'}</Dropdown.Item>
+                                        <Dropdown.Item onClick={token? ()=>{userLogout()} : ()=>{userLogin()}}  >{token ? 'LogOut': 'Login'}</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                         </Nav>

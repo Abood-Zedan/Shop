@@ -6,11 +6,24 @@ import { IoAddOutline } from "react-icons/io5";
 import { MdOutlineSettings } from "react-icons/md";
 import { LuShare2 } from "react-icons/lu";
 import { MdCircle } from "react-icons/md";
+import { FaAt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { IoIosEyeOff } from "react-icons/io";
+import { IoIosEye } from "react-icons/io";
+import { CiCalendarDate } from "react-icons/ci";
+
 
 import style from './profile.module.css'
+import { useNavigate } from 'react-router-dom';
 export default function UserInfo() {
 
     const { user, isLoading } = useContext(UserContext);
+    const [showPassword, setShowPassword] = useState('password')
+    const navigat = useNavigate();
+
+    const isPssword = () => {
+        setShowPassword(showPassword === 'password' ? 'text' : 'password')
+    }
 
     if (isLoading) {
         return <div>Loading...</div>
@@ -19,7 +32,7 @@ export default function UserInfo() {
     return (
         <>
             <section className={`${style.userInfo}`}>
-                <Container>
+                <Container className='pt-2'>
                     <div className={`d-flex justify-content-between align-items-center`}>
                         <div className="info">
                             <div className="img"></div>
@@ -40,24 +53,28 @@ export default function UserInfo() {
                             <Button><LuShare2 /></Button>
                         </div>
                     </div>
-                    <hr/>
-                    <div className={`${style.details}`}>
+                    <hr />
+                    <div className={`${style.details} d-flex flex-column gap-3`}>
                         <h3 className='fs-5'>Details :</h3>
-                        <br />
                         <Form className='d-flex flex-column gap-3'>
-                            <Form.Group controlId="formBasicEmail" className='d-flex gap-2 align-items-center'>
+                            <Form.Group controlId="formBasicEmail" className='d-flex align-items-center'>
                                 <Form.Label>User Name :</Form.Label>
                                 <Form.Control className='w-25' type="text" placeholder="" value={user.userName} disabled />
+                                <div className={`${style.icon}`}><FaAt /></div>
                             </Form.Group>
-                            <Form.Group controlId="formBasicEmail" className='d-flex gap-2 align-items-center'>
+                            <Form.Group controlId="formBasicEmail" className='d-flex align-items-center'>
                                 <Form.Label>Email :</Form.Label>
                                 <Form.Control className='w-25' type="email" placeholder="" value={user.email} disabled />
+                                <div className={`${style.icon}`}><MdEmail /></div>
                             </Form.Group>
-                            <Form.Group controlId="formBasicEmail" className='d-flex gap-2 align-items-center'>
-                                <Form.Label>Email :</Form.Label>
-                                <Form.Control className='w-25' type="password" placeholder="" value={user.password} disabled />
+                            <Form.Group controlId="formBasicEmail" className='d-flex align-items-center'>
+                                <Form.Label>Password :</Form.Label>
+                                <Form.Control className='w-25' type={showPassword} placeholder="" value={user.password} disabled />
+                                <div onClick={() => { isPssword() }} className={`${style.icon}`}>{showPassword === 'password' ? <IoIosEyeOff /> : <IoIosEye />}</div>
                             </Form.Group>
+                            <Button className={`${style.update}`} onClick={() => { navigat('/auth/sendcode') }}>Update Password</Button>
                         </Form>
+                        <p className='d-flex gap-2 mt-4'><div><CiCalendarDate /></div> {user.createdAt}</p>
                     </div>
                 </Container>
             </section>
