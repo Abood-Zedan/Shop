@@ -1,6 +1,7 @@
 .row {
     flex-wrap: nowrap;
 }
+
 .row .col {
     width: fit-content;
     padding: 0 2px;
@@ -37,6 +38,45 @@
     transition: 0.6s;
 }
 
+.userInfo .img {
+    width: 750px;
+}
+
+.userInfo .img label {
+    position: absolute;
+    bottom: 10px;
+    left: 16%;
+    background: var(--borderColor);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.userInfo .img label:hover {
+    background: #fff;
+    color: var(--darkColor);
+    transition: 0.6s;
+}
+
+.userInfo .img img {
+    width: 145px;
+    height: 140px;
+    border: 1px solid var(--darkColor);
+}
+
+.userInfo .img .save {
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    background-color: var(--darkColor);
+    border: none;
+}
+
 .userInfo .name .statuss {
     border: 1px solid var(--darkColor);
     font-size: 12px;
@@ -55,10 +95,12 @@
     font-size: 16px;
     font-weight: 500;
 }
+
 .userInfo .details input {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
+
 .userInfo .details .icon {
     background: #e9ecef;
     padding: 10px 5px;
@@ -80,6 +122,7 @@
     border-color: #ced4da;
     transition: 0.6s;
 }
+
 .userInfo .details .update {
     width: fit-content;
     background: #4CAF50;
