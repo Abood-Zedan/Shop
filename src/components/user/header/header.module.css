@@ -39,21 +39,129 @@
     transition: 0.5s
 }
 
-.header .img {
-    background-image: url(../../../assets/images/header/hero-one-shape.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 80%;
+.header .img img {
+    position: absolute;
+    border-radius: 40px;
 }
 
-.header .img img {
+.header .img .mainImg {
+    z-index: 5;
+    width: 60%;
+}
+
+.header .img .backImg {
     width: 65%;
-    border-radius: 40px;
 }
 
 .hight {
     height: 746px;
+}
+
+/* responsive */
+
+@media screen and (max-width: 1250px) {
+    .header .text .textBox span {
+        font-size: 14px !important;
+    }
+
+    .header .text button {
+        padding: 10px 15px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .header .text h1 {
+        font-size: 50px;
+    }
+
+    .header .text p {
+        font-size: 17px;
+    }
+
+    .header .textBox .currency {
+        font-size: 50px;
+    }
+
+    .header .textBox h3 {
+        font-size: 25px !important;
+    }
+
+    .header .text .textBox span {
+        font-size: 11px !important;
+    }
+
+    .header .text button {
+        padding: 7px 12px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .header .text h1 {
+        font-size: 40px;
+    }
+
+    .header .text p {
+        font-size: 15px;
+    }
+
+    .header .textBox .currency {
+        font-size: 45px;
+    }
+
+    .header .textBox h3 {
+        font-size: 22px !important;
+    }
+
+    .header .text .textBox span {
+        font-size: 10px !important;
+    }
+
+    .header .text button {
+        padding: 7px 12px;
+        font-size: 15px;
+    }
+
+    .header .text .line {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .header {
+        justify-content: flex-start !important;
+    }
+
+    .header .text {
+        display: flex;
+        gap: 20px;
+        width: 100% !important;
+    }
+
+    .header .text span {
+        font-size: 14px !important;
+    }
+
+    .header .text h1 {
+        font-size: 26px;
+        line-height: 30px;
+        font-weight: 400;
+        margin-top: 7px;
+    }
+
+    .header .img {
+        display: none !important;
+    }
+
+    .header .text .line {
+        width: 100px;
+    }
+
+    .header .text button {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
 }
 
 /* End Header */

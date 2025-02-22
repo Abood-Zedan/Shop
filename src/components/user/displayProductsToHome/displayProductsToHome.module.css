@@ -115,4 +115,29 @@
     color: white;
 }
 
+/* responsive */
+@media screen and (max-width: 767px) {
+    .displayProducts .name {
+        font-size: 13px !important;
+    }
+    .displayProducts .card {
+        width: 18rem !important;
+    }
+    .displayProducts .card_body {
+        display: block !important;;
+    }
+    .displayProducts .main {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .displayProducts .nav {
+        width: fit-content;
+    }
+}
+@media screen and (max-width: 500px) {
+    .displayProducts {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
 /* End Product whit categories */

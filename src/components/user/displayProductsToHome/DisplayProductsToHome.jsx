@@ -8,6 +8,7 @@ import { Bounce, toast } from 'react-toastify';
 import { CartContext } from '../context/CartContext';
 import useFetch from '../../../hooks/useFetch';
 import LoadingPage from '../loading/LoadingPage';
+import Rating from '../rating/Rating';
 
 export default function DisplayProductsToHome() {
 
@@ -30,7 +31,7 @@ export default function DisplayProductsToHome() {
             )
             if (responce.status === 201) {
                 toast.success('Added successfully', {
-                    position: "top-right",
+                    position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
                     closeOnClick: true,
@@ -45,7 +46,7 @@ export default function DisplayProductsToHome() {
         }
         catch (error) {
             toast.error(error, {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -85,7 +86,7 @@ export default function DisplayProductsToHome() {
         <>
             <section className={`my-5`}>
                 <Container fluid className={`${style.displayProducts} px-5`}>
-                    <div className={`d-flex justify-content-between`}>
+                    <div className={`${style.main} d-flex justify-content-between`}>
                         <div className={`${style.text} d-flex flex-column justify-content-center gap-2 mb-5`}>
                             <span><GiFireflake /> <span className={`main-color fw-semibold`}>Feature Products</span></span>
                             <h3 className={`fs-2 fw-bold`}>Our Features Collection</h3>
@@ -106,7 +107,7 @@ export default function DisplayProductsToHome() {
                     </div>
                     <Row className='justify-content-evenly'>
                         {data.products.map(product =>
-                            <Col md={3} className="d-flex justify-content-center h-100" key={product._id}>
+                            <Col sm={6} md={4} lg={3} className="d-flex justify-content-center h-100" key={product._id}>
                                 <Card style={{ width: '21rem' }} className={`${style.card} border-0`}>
                                     <div className={`${style.img} d-flex flex-direction-column align-items-center flex-column`}>
                                         <Card.Img variant="top" src={product.mainImage.secure_url} />
@@ -122,11 +123,7 @@ export default function DisplayProductsToHome() {
                                         <div className={`${style.text}`}>
                                             <Card.Text className='d-flex gap-1 m-0'>
                                                 <div className="rating">
-                                                    <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                    <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                    <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                    <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                    <i className={`fa-solid fa-star ${style.star}`}></i>
+                                                    {<Rating data={product.avgRating}/>}
                                                 </div>
                                                 <p className='text-color'>(65)</p>
                                             </Card.Text>

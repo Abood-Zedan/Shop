@@ -13,7 +13,7 @@ export default function Profile() {
                     <Col md={2} className={`${style.col}`}>
                         <CustomSidebar />
                     </Col>
-                    <Col md={10}>
+                    <Col md={10} className='pb-5'>
                         <Outlet />
                     </Col>
                 </Row>

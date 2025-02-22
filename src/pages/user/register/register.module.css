@@ -1,7 +1,20 @@
 /* Start Register page */
-.register_page .registerForm{
+.register_page .registerForm {
     gap: 40px;
     background-color: var(--headerColor);
+}
+
+.register_page .registerForm .home {
+    text-decoration: none;
+    color: var(--darkColor);
+    background-color: var(--secColor);
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    align-self: flex-end;
 }
 
 .register_page .registerForm h1 {
@@ -24,7 +37,7 @@
     color: white;
 }
 
-.register_page form button:hover  {
+.register_page form button:hover {
     background-color: var(--secColor);
 }
 
@@ -33,6 +46,28 @@
     background-color: var(--darkColor);
     color: white;
     border-radius: 5px;
+}
+
+/* responsive */
+@media screen and (max-width: 992px) {
+    .register_page .img {
+        display: none;
+    }
+
+    .register_page {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .register_page .registerForm {
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .register_page .registerForm h1 {
+        font-size: 40px;
+    }
 }
 
 /* End Register page */

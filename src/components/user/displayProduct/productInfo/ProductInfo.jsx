@@ -1,13 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import HeadOfPage from '../../headOfPage/HeadOfPage'
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import { Bounce, toast } from 'react-toastify';
 import style from './productInfo.module.css'
 import { CartContext } from '../../context/CartContext';
+import { preinit } from 'react-dom';
+import Rating from '../../rating/Rating';
 
 export default function ProductInfo({ data, productId }) {
 
+
+    const [countReviews, setCountReviews] = useState(data.product.reviews.length);
     const { cartCount, setCartCount } = useContext(CartContext);
     const addToCart = async () => {
         const token = localStorage.getItem('userToken');
@@ -24,7 +28,7 @@ export default function ProductInfo({ data, productId }) {
             )
             if (responce.status === 201) {
                 toast.success('Added successfully', {
-                    position: "top-right",
+                    position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
                     closeOnClick: true,
@@ -39,7 +43,7 @@ export default function ProductInfo({ data, productId }) {
         }
         catch (error) {
             toast.error(error, {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -78,12 +82,9 @@ export default function ProductInfo({ data, productId }) {
                     <div className="info-product d-flex flex-column gap-3">
                         {data.product.discount > 0 ? <span className={`${style.discount} main-color fw-bold`}><i className="fa-solid fa-tags"></i> SALE {data.product.discount}% OFF</span> : null}
                         <h1 className={`${style.main_title}`}>{data.product.name}</h1>
-                        <div className="rating d-flex gap-1">
-                            <i className="fa-solid fa-star main-color"></i>
-                            <i className="fa-solid fa-star main-color"></i>
-                            <i className="fa-solid fa-star main-color"></i>
-                            <i className="fa-solid fa-star main-color"></i>
-                            <i className="fa-solid fa-star main-color"></i>
+                        <div className="rating d-flex gap-1 align-items-center">
+                            {<Rating data={data.avgRating}/>}
+                            <span className='text-color'>({countReviews} Reviews)</span>
                         </div>
                         <p className='text-color'>{data.product.description}</p>
                         <div className="price d-flex gap-2 align-items-center">
@@ -150,9 +151,6 @@ export default function ProductInfo({ data, productId }) {
                             <span>SKU : </span>
                             KE-91039
                         </div>
-                        {/* <div className="type">
-                                <span>{categoryName}</span>
-                            </div> */}
                         <div className={`${style.share} d-flex gap-2`}>
                             <span>Share : </span>
                             <div className="icon d-flex gap-2 align-items-center">

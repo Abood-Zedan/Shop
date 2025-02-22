@@ -1,0 +1,76 @@
+.banner .item {
+    border: 2px solid var(--darkColor);
+    border-radius: 28px;
+    background-color: #FFF9F8;
+    padding: 48px 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner .item .discount p {
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.banner .item .discount span {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+.banner .item h4 {
+    font-size: 20px;
+}
+
+.banner .item a {
+    padding: 16px 24px;
+    line-height: 18px;
+    font-size: 18px;
+    background-color: var(--darkColor);
+    border: none;
+    border-radius: 50px;
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    transition: 0.6s;
+}
+
+.banner .item a:hover {
+    background-color: var(--mainColor);
+    transition: 0.6s;
+}
+
+.banner .item .line {
+    position: absolute;
+    right: 0;
+}
+
+.banner .item .bannerImg {
+    z-index: 50;
+}
+
+.banner .item .discountImg {
+    position: absolute;
+    top: 50px;
+    left: 42%;
+}
+
+/* responsive */
+@media screen and (max-width: 1400px) {
+    .banner .item h4 {
+        font-size: 17px;
+    }
+
+    .banner .item a {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .banner .item .discountImg {
+        display: none;
+    }
+}
+
+/* End style */

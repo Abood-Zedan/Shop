@@ -30,4 +30,8 @@ body {
     font-weight: 800;
 }
 
+.darkColor {
+    color: var(--darkColor);
+}
+
 /**************************/

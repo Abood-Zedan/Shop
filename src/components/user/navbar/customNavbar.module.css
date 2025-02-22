@@ -1,6 +1,9 @@
 /* Start User navber */
 .userNavbar {
     background-color: var(--secLightColor);
+    position: sticky;
+    top: 0;
+    z-index: 99999;
 }
 .userNavbar a {
     color: var(--darkColor);
@@ -47,5 +50,9 @@
     background-color: var(--secLightColor);
     border: none;
     padding: 0;
+}
+
+.userNavbar .dropdown_menu {
+    left: -30px;
 }
 /* End User navber */

@@ -15,12 +15,15 @@ import ProtectedRoute from './components/user/protectedRoute/ProtectedRoute'
 import CartContextProvider from './components/user/context/CartContext'
 import Profile from './pages/user/profile/Profile'
 import UserInfo from './pages/user/profile/UserInfo'
-import Orders from './pages/user/profile/Orders'
 import UserContextProvider from './components/user/context/UserContext'
 import SendCode from './pages/user/forgotPassword/SendCode'
 import ForgotPassword from './pages/user/forgotPassword/ForgotPassword'
 import Contact from './pages/user/contact/Contact'
 import Categories from './pages/user/categories/categories'
+import UserOrders from './pages/user/profile/UserOrders'
+import Order from './pages/user/cart/Order'
+import DisplayOrder from './pages/user/profile/DisplayOrder'
+import AuthProtectedRoute from './components/user/protectedRoute/AuthProtectedRoute'
 
 
 export default function App() {
@@ -28,7 +31,10 @@ export default function App() {
   const router = createBrowserRouter([
     {
       path: '/auth',
-      element: <AuthLayout />,
+      element:
+        <AuthProtectedRoute>
+          <AuthLayout />
+        </AuthProtectedRoute>,
       children: [
         {
           path: 'Login',
@@ -40,17 +46,22 @@ export default function App() {
         },
         {
           path: 'sendCode',
-          element: <SendCode/>
+          element: <SendCode />
         },
         {
           path: 'forgotPassword',
-          element: <ForgotPassword/>
+          element: <ForgotPassword />
         },
       ]
     },
     {
       path: '/',
-      element: <UserLayout />,
+      element:
+        <UserContextProvider>
+          <CartContextProvider>
+            <UserLayout />
+          </CartContextProvider>
+        </UserContextProvider>,
       children: [
         {
           path: '/',
@@ -90,11 +101,17 @@ export default function App() {
         },
         {
           path: 'cart/:productId',
-          element: <Product />
+          element:
+            <ProtectedRoute>
+              <Product />
+            </ProtectedRoute>
         },
         {
           path: 'profile',
-          element: <Profile />,
+          element:
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>,
           children: [
             {
               path: 'userInfo',
@@ -102,13 +119,24 @@ export default function App() {
             },
             {
               path: 'orders',
-              element: <Orders />
+              element: <UserOrders />
+            },
+            {
+              path: 'displayOrder/:orderId',
+              element: <DisplayOrder />
             },
           ]
         },
         {
           path: 'contact',
-          element: <Contact/>
+          element: <Contact />
+        },
+        {
+          path: 'order',
+          element:
+            <ProtectedRoute>
+              <Order />
+            </ProtectedRoute>
         },
       ]
     },
@@ -119,12 +147,10 @@ export default function App() {
   ])
   return (
     <>
-      <UserContextProvider>
-        <CartContextProvider>
-          <ToastContainer />
-          <RouterProvider router={router} />
-        </CartContextProvider>
-      </UserContextProvider>
+
+      <ToastContainer />
+      <RouterProvider router={router} />
+
     </>
   )
 }

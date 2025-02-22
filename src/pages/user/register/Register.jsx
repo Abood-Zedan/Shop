@@ -9,6 +9,7 @@ import { Bounce, toast } from 'react-toastify';
 import registerImg from '../../../assets/images/istockphoto.webp'
 import { Nav } from 'react-bootstrap';
 import style from './register.module.css'
+import { IoArrowBackCircleSharp } from 'react-icons/io5';
 
 export default function Register() {
 
@@ -21,7 +22,7 @@ export default function Register() {
       const response = await axios.post(`https://ecommerce-node4.onrender.com/auth/signup`, value)
       if (response.status === 201) {
         toast.info('please check your email', {
-          position: "top-right",
+          position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -37,7 +38,7 @@ export default function Register() {
     } catch (error) {
       if (error.response.status === 409) {
         toast.error('Email already in use', {
-          position: "top-right",
+          position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -68,10 +69,11 @@ export default function Register() {
   return (
     <>
       <section className={`${style.register_page} d-flex vh-100`}>
-        <div className='img w-50 h-100'>
+        <div className={`${style.img} w-50 h-100`}>
           <img src={registerImg} alt="" className='w-100 h-100' />
         </div>
-        <div className={`${style.registerForm} w-50 d-flex flex-column justify-content-center align-items-center`}>
+        <div className={`${style.registerForm} w-50 d-flex flex-column justify-content-center align-items-center pe-3`}>
+          <Link to={'/'} className={`${style.home}`}><IoArrowBackCircleSharp /> Home</Link>
           <h1 className='fw-bold'>Zedan-Shop</h1>
           <h2>Create an account</h2>
           <Form onSubmit={handleSubmit(registerUser)} className=' d-flex flex-column'>

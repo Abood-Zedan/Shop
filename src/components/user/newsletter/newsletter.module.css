@@ -1,0 +1,127 @@
+.newsletter .item {
+    padding: 80px 85px 0;
+    background-image: url(../../../assets/images/deal/deal-bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.newsletter .item .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter .item h2 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: var(--darkColor);
+    text-transform: capitalize;
+}
+
+.newsletter .item h2 span {
+    color: var(--mainColor);
+    border-bottom: 1px solid var(--mainColor);
+}
+
+.newsletter .item .form {
+    position: relative;
+}
+
+.newsletter .item input {
+    padding: 20px 160px 20px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--darkColor);
+    line-height: 16px;
+}
+
+.newsletter .item button {
+    padding: 16px 24px;
+    border-radius: 50px;
+    font-size: 20px;
+    line-height: 21px;
+    background-color: var(--darkColor);
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transition: background-color 0.6s ease-in;
+}
+
+.newsletter .item button:hover {
+    background-color: var(--mainColor);
+    transition: background-color 0.6s ease-in;
+}
+
+.newsletter .item .star {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+/* responsive */
+@media screen and (max-width: 1380px) {
+    .newsletter .item {
+        padding: 65px 70px 0;
+    }
+    .newsletter .item .star {
+        display: none;
+    }
+    .newsletter .item .mainImg {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .newsletter .item {
+        padding: 55px 40px 0
+    }
+    .newsletter .item h2 {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .newsletter .item {
+        padding: 55px 35px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    .newsletter .item h2 {
+        font-size: 28px;
+    }
+    .newsletter .item .star {
+        display: block;
+        left: -10%;
+    }
+    .newsletter .item .img {
+        justify-content: center !important;
+    }
+}
+@media screen and (max-width: 898px) {
+    .newsletter .item {
+        padding: 55px 30px 0;
+    }
+    .newsletter .item h2 {
+        font-size: 22px;
+    }
+    .newsletter .item .star {
+        display: block;
+        left: -20%;
+    }
+}
+@media screen and (max-width: 764px) {
+    .newsletter .item {
+        padding: 55px 30px 0;
+    }
+    .newsletter .item h2 {
+        font-size: 22px;
+    }
+    .newsletter .item .star {
+        display: block;
+        left: 0%;
+        width: 15%;
+    }
+}
+
+
+
+/* End Style */

@@ -1,0 +1,195 @@
+.deal .itme {
+    display: flex;
+    border: 1px solid var(--darkColor);
+    padding: 90px 95px 0;
+    border-radius: 50px;
+    background-image: url(../../../assets/images/deal/deal-bg.png);
+    background-position: center;
+    background-size: cover;
+    gap: 15px;
+}
+
+.deal .itme .text {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.deal .itme h2,
+.deal .itme p {
+    font-size: 36px;
+    color: var(--darkColor);
+    font-weight: 600;
+    margin: 0;
+}
+
+.deal .itme p {
+    color: var(--mainColor);
+}
+
+.deal .itme .countDown div {
+    width: 96px;
+    height: 96px;
+    border: 1px solid var(--borderColor);
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 36px;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+.deal .itme .countDown div span {
+    font-size: 16px;
+    color: #5E626F;
+    font-weight: 600;
+}
+
+.deal .itme a {
+    width: fit-content;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 32px;
+    line-height: 16px;
+    border-radius: 50px;
+    background-color: var(--darkColor);
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.6s ease;
+}
+
+.deal .itme a:hover {
+    background-color: var(--mainColor);
+    transition: background-color 0.6s ease;
+}
+
+/* responsive */
+@media screen and (max-width: 1300px) {
+
+    .deal .itme h2,
+    .deal .itme p {
+        font-size: 28px;
+    }
+
+    .deal .itme .countDown div {
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+    }
+
+    .deal .itme .countDown div span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .deal .itme .text {
+        gap: 20px;
+    }
+
+    .deal .itme h2,
+    .deal .itme p {
+        font-size: 22px;
+    }
+
+    .deal .itme .countDown div {
+        width: 65px;
+        height: 65px;
+        font-size: 22px;
+        line-height: 20px;
+    }
+
+    .deal .itme .countDown div span {
+        font-size: 10px;
+    }
+
+    .deal .itme a {
+        font-size: 14px;
+        padding: 14px 30px;
+    }
+
+    .deal .itme .text .span {
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .deal .itme .text {
+        gap: 18px;
+    }
+
+    .deal .itme h2,
+    .deal .itme p {
+        font-size: 20px;
+    }
+
+    .deal .itme .countDown div {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        line-height: 18px;
+    }
+
+    .deal .itme .countDown div span {
+        font-size: 10px;
+    }
+
+    .deal .itme a {
+        font-size: 12px;
+        padding: 12px 28px;
+    }
+
+    .deal .itme .text .span {
+        font-size: 14px !important;
+    }
+    .deal .itme {padding: 60px 65px 0;}
+}
+
+@media screen and (max-width: 890px) {
+
+    .deal .itme .text {
+        gap: 16px;
+    }
+
+    .deal .itme h2,
+    .deal .itme p {
+        font-size: 20px;
+    }
+
+    .deal .itme .countDown div {
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+        line-height: 16px;
+    }
+
+    .deal .itme .countDown div span {
+        font-size: 8px;
+    }
+
+    .deal .itme a {
+        font-size: 12px;
+        padding: 10px 26px;
+    }
+
+    .deal .itme .text .span {
+        font-size: 14px !important;
+    }
+    .deal .itme {padding: 45px 50px 0;}
+}
+
+@media screen and (max-width: 810px) {
+    .deal .itme {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .deal .itme .text {
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* End Style */

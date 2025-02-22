@@ -1,3 +1,7 @@
+.cart {
+    padding-bottom: 50px;
+}
+
 table th,
 table td {
     background-color: #FFFAF3 !important;
@@ -41,15 +45,18 @@ table td {
     font-size: 18px;
     font-weight: 600;
 }
+
 .cart tbody .remove {
     border-radius: 50px;
     background-color: transparent;
     border: 1px solid #AEB0B6;
     color: var(--darkColor);
 }
+
 .cart .shoping_btn {
     padding: 20px;
 }
+
 .cart .shoping_btn button {
     padding: 20px 30px;
     border-radius: 50px;
@@ -57,7 +64,59 @@ table td {
     background-color: var(--darkColor);
     transition: 0.5s;
 }
+
 .cart .shoping_btn button:hover {
+    background-color: var(--mainColor);
+    transition: 0.5s;
+}
+
+.cart .price {
+    border: 2px solid var(--darkColor);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    gap: 20px;
+}
+
+.cart .price h5 {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.border {
+    border-bottom: 1px solid #E5E5E8;
+    padding-bottom: 20px;
+}
+
+.cart .price button {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 20px 40px;
+    line-height: 16px;
+    background-color: var(--darkColor);
+    border: none;
+    transition: 0.5s ease-in;
+}
+
+.cart .price button:hover {
+    background-color: var(--mainColor);
+    transition: 0.5s ease-in;
+}
+
+/*************************************/
+
+.order button {
+    background-color: var(--darkColor);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.order button:hover {
     background-color: var(--mainColor);
     transition: 0.5s;
 }

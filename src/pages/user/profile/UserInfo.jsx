@@ -13,14 +13,15 @@ import { IoIosEye } from "react-icons/io";
 import { CiCalendarDate } from "react-icons/ci";
 import userImage from '../../../assets/images/profile/userImage.jfif'
 import { IoMdColorFilter } from "react-icons/io";
-
-
-import style from './profile.module.css'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { Bounce, toast } from 'react-toastify';
 import LoadingPage from '../../../components/user/loading/LoadingPage';
+
+
+import style from './profile.module.css'
+
 export default function UserInfo() {
 
     const { register, handleSubmit } = useForm();
@@ -29,6 +30,7 @@ export default function UserInfo() {
     const navigat = useNavigate();
     const [imageChange, setImageChange] = useState(false)
     const [image, setImage] = useState(userImage);
+    const { setUser } = useContext(UserContext);
     const isPssword = () => {
         setShowPassword(showPassword === 'password' ? 'text' : 'password')
     }
@@ -81,6 +83,12 @@ export default function UserInfo() {
         setImageChange(true)
         const file = e.target.files[0]
         setImage(URL.createObjectURL(file))
+    }
+
+    const updatePassword = () => {
+        localStorage.removeItem('userToken')
+        setUser(null);
+        navigat('/auth/sendcode')
     }
 
     if (isLoading) {
@@ -138,7 +146,7 @@ export default function UserInfo() {
                                 <Form.Control className='w-25' type={showPassword} placeholder="" value={user.password} disabled />
                                 <div onClick={() => { isPssword() }} className={`${style.icon}`}>{showPassword === 'password' ? <IoIosEyeOff /> : <IoIosEye />}</div>
                             </Form.Group>
-                            <Button className={`${style.update}`} onClick={() => { navigat('/auth/sendcode') }}>Update Password</Button>
+                            <Button className={`${style.update}`} onClick={() => { updatePassword() }}>Update Password</Button>
                         </Form>
                         <p className='d-flex gap-2 mt-4'><div><CiCalendarDate /></div> {user.createdAt}</p>
                     </div>

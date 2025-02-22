@@ -1,14 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import HeadOfPage from '../headOfPage/HeadOfPage'
-import { Card } from 'react-bootstrap'
+import { Button, Card, Dropdown, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Bounce, toast } from 'react-toastify'
+import Pagination from 'react-bootstrap/Pagination';
 import axios from 'axios'
 import style from './displayProducts.module.css'
 import { CartContext } from '../context/CartContext'
+import Rating from '../rating/Rating'
+import Sort from '../operations/sort'
+import Search from '../operations/Search'
+import Filter from '../operations/Filter'
 
 export default function DisplayProducts({ data }) {
 
+    const [products, setProducts] = useState(data);
     const { cartCount, setCartCount } = useContext(CartContext);
     const addToCart = async (productId) => {
         const token = localStorage.getItem('userToken');
@@ -25,7 +31,7 @@ export default function DisplayProducts({ data }) {
             )
             if (responce.status === 201) {
                 toast.success('Added successfully', {
-                    position: "top-right",
+                    position: "bottom-right",
                     autoClose: 5000,
                     hideProgressBar: false,
                     closeOnClick: true,
@@ -40,7 +46,7 @@ export default function DisplayProducts({ data }) {
         }
         catch (error) {
             toast.error(error, {
-                position: "top-right",
+                position: "bottom-right",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -53,12 +59,18 @@ export default function DisplayProducts({ data }) {
         }
     }
 
+
     return (
         <>
             <section className={`${style.displayProducts}`}>
                 <HeadOfPage title='Products whit Categories' page='Products' />
+                <div className={`${style.operations} pe-4 px-5 mb-5 d-flex justify-content-between`}>
+                    <Filter setData={setProducts} />
+                    <Sort setData={setProducts} />
+                    <Search setData={setProducts} />
+                </div>
                 <div className="row justify-content-center row-gap-5 m-0">
-                    {data.products.map(product =>
+                    {products.products.map(product =>
                         <div className="col-4 d-flex justify-content-center h-100" key={product._id}>
                             <Card style={{ width: '23rem' }} className={`${style.card} border-0`}>
                                 <div className={`${style.img} d-flex flex-direction-column align-items-center flex-column`}>
@@ -75,11 +87,7 @@ export default function DisplayProducts({ data }) {
                                     <div className={`${style.text}`}>
                                         <Card.Text className='d-flex gap-1 m-0'>
                                             <div className="rating">
-                                                <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                <i className={`fa-solid fa-star ${style.star}`}></i>
-                                                <i className={`fa-solid fa-star ${style.star}`}></i>
+                                                {<Rating data={product.avgRating} />}
                                             </div>
                                             <p className='text-color'>(65)</p>
                                         </Card.Text>
@@ -94,6 +102,15 @@ export default function DisplayProducts({ data }) {
                             </Card>
                         </div>
                     )}
+                    <Pagination className='justify-content-center'>
+                        <Pagination.Prev />
+                        {
+                            Array.from({ length: Math.ceil(products.total / 6) }, (_, i) => (
+                                <Pagination.Item key={i}>{i + 1}</Pagination.Item>
+                            ))
+                        }
+                        <Pagination.Next />
+                    </Pagination>
                 </div>
             </section>
         </>

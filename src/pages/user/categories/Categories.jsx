@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import Footer from '../../../components/user/footer/Footer'
 import HeadOfPage from '../../../components/user/headOfPage/HeadOfPage'
 import LoadingPage from '../../../components/user/loading/LoadingPage'
+import { Col, Container, Row } from 'react-bootstrap'
+import Newsletter from '../../../components/user/newsletter/Newsletter'
 
 export default function Categories() {
 
@@ -15,20 +17,21 @@ export default function Categories() {
     }
     return (
         <>
-            <section className='categories-page'>
+            <section className='categories-page mb-5'>
                 <HeadOfPage title='Shop Categories' page='Categories'/>
-                <div className="container-fluid">
-                    <div className="row mt-5">
+                <Container fluid>
+                    <Row className="mt-5 row-gap-3 justify-content-around">
                         {data.categories.map(category =>
-                            <div className="col-3" key={category._id}>
+                            <Col lg={3} md={4} sm={6} key={category._id}>
                                 <Link to={`${category._id}`} className='d-flex justify-content-center'>
                                     <img src={category.image.secure_url} alt="" className='w-50' />
                                 </Link>
-                            </div>
+                            </Col>
                         )}
-                    </div>
-                </div>s
+                    </Row>
+                </Container>
             </section>
+            <Newsletter/>
         </>
     )
 }

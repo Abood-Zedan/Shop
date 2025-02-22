@@ -1,11 +1,12 @@
 import React from 'react'
 import { Card, Row } from 'react-bootstrap'
-import reviewImg from '../../../../assets/images/product/review.jpg'
+import reviewImg from '../../../../assets/images/product/userjpg.jpg'
 import style from './reviews.module.css'
+import Rating from '../../rating/Rating'
 
 export default function Reviews({data}) {
 
-
+    
     return (
         <>
             <section className={`${style.infoAndReviews} mt-5`}>
@@ -28,15 +29,11 @@ export default function Reviews({data}) {
                                         <div className={`${style.review}`} key={review._id}>
                                             <Card className='px-4 pt-4'>
                                                 <div className='d-flex gap-3 position-relative'>
-                                                    <Card.Img variant="top" className={`${style.img}`} src={reviewImg} />
+                                                    <Card.Img variant="top" className={`${style.img}`} src={review.createdBy.image ? review.createdBy.image.secure_url : reviewImg } />
                                                     <div className="text text-capitalize">
                                                         <Card.Title>{review.createdBy.userName}</Card.Title>
                                                         <div className={`${style.rating}`}>
-                                                            <i className="fa-solid fa-star"></i>
-                                                            <i className="fa-solid fa-star"></i>
-                                                            <i className="fa-solid fa-star"></i>
-                                                            <i className="fa-solid fa-star"></i>
-                                                            <i className="fa-solid fa-star"></i>
+                                                            {<Rating data={review.rating}/>}
                                                             <span>{review.updatedAt}</span>
                                                         </div>
                                                     </div>

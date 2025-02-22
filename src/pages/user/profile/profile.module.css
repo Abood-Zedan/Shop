@@ -135,3 +135,57 @@
     background: #45a049;
     transition: 0.6s;
 }
+
+/******************************************/
+
+
+.orders .order {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--darkColor);
+    color: white;
+    transition: 0.9s;
+}
+
+.orders .order:hover {
+    background: var(--mainColor);
+    transition: 0.9s;
+}
+
+.orders .order:hover span {
+    background: var(--darkColor);
+    transition: 0.9s;
+}
+
+.orders .order span {
+    display: flex;
+    align-items: center;
+    background: var(--mainColor);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 17px;
+    transition: 0.9s;
+}
+
+.orders .order .button button {
+    background-color: var(--darkColor);
+}
+
+/*********************************/
+
+.displayOrder p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    background: var(--mainColor);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}

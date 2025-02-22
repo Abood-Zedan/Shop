@@ -6,13 +6,14 @@ import recentPost_3 from '../../../assets/images/footer/recent-post-3.png'
 import shape from '../../../assets/images/footer/shape.png'
 import { Link } from 'react-router-dom'
 import style from './footer.module.css'
+import { Col, Container, Row } from 'react-bootstrap'
 export default function Footer() {
     return (
         <>
             <footer>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-3 d-flex flex-column gap-1">
+                <Container fluid>
+                    <Row className="row-gap-3">
+                        <Col lg={3} md={6} sm={12} className="d-flex flex-column gap-1">
                             <h3 className='fw-bold title'>Zedan-Shop</h3>
                             <p className='text-color'>Zedan is an exciting International brand we provide high quality cloths</p>
                             <div className={`${style.email} d-flex align-items-center gap-1`}>
@@ -30,8 +31,8 @@ export default function Footer() {
                                 <a href="#"><i className="fa-brands fa-linkedin-in fs-5"></i></a>
                                 <a href="#"><i className="fa-brands fa-twitter fs-5"></i></a>
                             </div>
-                        </div>
-                        <div className={`col-3 ${style.customer_services} d-flex flex-column gap-2`}>
+                        </Col>
+                        <Col lg={3} md={6} sm={12} className={`${style.customer_services} d-flex flex-column gap-2`}>
                             <h3 className='fs-4'>Customer Services</h3>
                             <div>
                                 <img src={star} alt="" />
@@ -56,8 +57,8 @@ export default function Footer() {
                             <div className={`${style.shape}`}>
                             <img src={shape} alt="" className='' />
                         </div>
-                        </div>
-                        <div className={`col-3 ${style.quick_link} d-flex flex-column gap-2`}>
+                        </Col>
+                        <Col lg={3} md={6} sm={12} className={` ${style.quick_link} d-flex flex-column gap-2`}>
                             <h3 className='fs-4'>Quick Link</h3>
                             <div>
                                 <img src={star} alt="" />
@@ -79,8 +80,8 @@ export default function Footer() {
                                 <img src={star} alt="" />
                                 <Link to={'/auth/login'}>Login / Register</Link>
                             </div>
-                        </div>
-                        <div className={`col-3 ${style.recent_post} d-flex flex-column gap-2`}>
+                        </Col>
+                        <Col lg={3} md={6} sm={12} className={` ${style.recent_post} d-flex flex-column gap-2`}>
                             <h3>Recent Post</h3>
                             <div className='d-flex gap-3'>
                                 <div><img src={recentPost_1} alt="" /></div>
@@ -103,10 +104,10 @@ export default function Footer() {
                                     <span>July 13, 2024</span>
                                 </div>
                             </div>
-                        </div>
+                        </Col>
                         
-                    </div>
-                </div>
+                    </Row>
+                </Container>
             </footer>
         </>
     )

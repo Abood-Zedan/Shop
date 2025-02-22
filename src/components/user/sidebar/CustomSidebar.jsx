@@ -26,7 +26,7 @@ export default function CustomSidebar() {
 
     return (
         <>
-            <Sidebar collapsed={isCollapsed} className={`vh-100 ${style.sidebar}`}>
+            <Sidebar collapsed={isCollapsed} className={`h-100 ${style.sidebar}`}>
                 <div className={`d-flex justify-content-end align-items-center`}>
                     <button onClick={() => setISCollapsed(!isCollapsed)}>
                         {isCollapsed ? <RiExpandRightLine /> : <RiContractLeftLine />}

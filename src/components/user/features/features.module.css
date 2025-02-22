@@ -26,3 +26,21 @@
 .border {
     border-right: 1px dashed black;
 }
+
+/* responsive */
+
+@media screen and (max-width: 991px) {
+    .row {
+        row-gap: 10px;
+    }
+    .row .nonBorderMd {
+        border: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .row .nonBorderSm {
+        border: none;
+    }
+}
+
+/* End Style */

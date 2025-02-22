@@ -14,7 +14,6 @@ import style from './displayCategories.module.css'
 export default function DisplayCategories() {
 
     const { data, isLoading } = useFetch(`https://ecommerce-node4.onrender.com/categories/active`)
-    console.log(data)
     if (isLoading) {
         return <h2>loading...</h2>
     }

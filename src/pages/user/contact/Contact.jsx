@@ -65,7 +65,7 @@ export default function Contact() {
                     </div>
                 </Container>
             </section>
-            <section className={`${style.contact}`}>
+            <section className={`${style.contact} mb-5`}>
                 <Container>
                     <Row className='justify-content-between'>
                         <Col md={8} className='bg-white p-5'>

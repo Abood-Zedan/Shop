@@ -34,4 +34,18 @@
     margin-bottom: 100px;
 }
 
+/* responsive */
+@media screen and (max-width: 1200px) {
+    .head .stars ,
+    .head .cruved {
+        display: none;
+    }
+}
+@media screen and (max-width: 850px) {
+    .head h1 {
+        font-size: 40px;
+    }
+}
+
+
 /* End  Head of the page */

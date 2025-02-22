@@ -11,9 +11,8 @@ export default function ProductsCategories() {
 
     const { categoryId } = useParams();
     const { data, error, isLoading } = useFetch(`https://ecommerce-node4.onrender.com/products/category/${categoryId}`);
-    console.log(data);
     if (isLoading) {
-        return <LoadingProduct/>
+        return <LoadingProduct />
     }
 
     return (

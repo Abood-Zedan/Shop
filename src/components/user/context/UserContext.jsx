@@ -28,7 +28,7 @@ const UserContextProvider = ({ children }) => {
             setIsLoading(false);
         }
     }
-    return <UserContext.Provider value={{ user, isLoading }}>
+    return <UserContext.Provider value={{ user, isLoading , setUser }}>
         {children}
     </UserContext.Provider>
 }

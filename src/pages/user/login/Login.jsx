@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
 import registerImg from '../../../assets/images/istockphoto.webp'
 import { Nav } from 'react-bootstrap';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 import style from './login.module.css'
 
 export default function Login() {
@@ -21,7 +22,7 @@ export default function Login() {
       const response = await axios.post(`https://ecommerce-node4.onrender.com/auth/signin`, value)
       if (response.status === 200) {
         toast.success('You have successfully logged in', {
-          position: "top-right",
+          position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -37,7 +38,7 @@ export default function Login() {
       console.log(response)
     } catch (error) {
       toast.error(`${error.response.data.message}`, {
-        position: "top-right",
+        position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -55,7 +56,8 @@ export default function Login() {
   return (
     <>
       <section className={`${style.login_page} d-flex vh-100`}>
-        <div className={`${style.loginForm} w-50 d-flex flex-column justify-content-center align-items-center`}>
+        <div className={`${style.loginForm} w-50 d-flex flex-column justify-content-center align-items-center ps-3`}>
+          <Link to={'/'} className={`${style.home}`}><IoArrowBackCircleSharp /> Home</Link>
           <h1 className='fw-bold'>Zedan-Shop</h1>
           <h2 className='text-center'>Login</h2>
           <Form onSubmit={handleSubmit(loginUser)} className='d-flex flex-column'>
@@ -85,7 +87,7 @@ export default function Login() {
             <Nav.Link className={`${style.btn}`} as={Link} to={'/auth/register'}>Register</Nav.Link>
           </div>
         </div>
-        <div className='w-50 h-100'>
+        <div className={`${style.img} w-50 h-100`}>
           <img src={registerImg} alt="" className='w-100 h-100' />
         </div>
       </section>

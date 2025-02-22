@@ -92,4 +92,18 @@
     color: var(--darkColor);
 }
 
+
+.displayProducts .operations input {
+    padding: 5px 15px;
+    border-radius: 7px;
+    border-color: var(--darkColor);
+}
+
+.displayProducts .operations button {
+    background-color: var(--darkColor);
+    border: none;
+    border-radius: 7px;
+    height: fit-content;
+}
+
 /* End Product whit categories */

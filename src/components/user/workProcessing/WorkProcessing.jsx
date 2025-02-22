@@ -18,7 +18,7 @@ export default function WorkProcessing() {
                         <h3 className={`fs-2 fw-bold`}>How it Work processing</h3>
                     </div>
                     <Row>
-                        <Col md={3}>
+                        <Col lg={3} md={6} sm={12}>
                             <div className={`${style.content} d-flex flex-column gap-2 bg-white`}>
                                 <div className={`icon fs-1`}>
                                     <AiOutlineFileSearch />
@@ -30,7 +30,7 @@ export default function WorkProcessing() {
                                 <div className={`${style.number}`}>01</div>
                             </div>
                         </Col>
-                        <Col md={3}>
+                        <Col lg={3} md={6} sm={12}>
                             <div className={`${style.content} d-flex flex-column gap-2 bg-white`}>
                                 <div className={`icon fs-1`}>
                                     <GiTakeMyMoney />
@@ -39,10 +39,10 @@ export default function WorkProcessing() {
                                     <h4>Browsing & Choosing</h4>
                                     <p className={`text-color`}>This is where customers visit your online store, browse your products.</p>
                                 </div>
-                                <div className={`${style.number}`}>01</div>
+                                <div className={`${style.number}`}>02</div>
                             </div>
                         </Col>
-                        <Col md={3}>
+                        <Col lg={3} md={6} sm={12}>
                             <div className={`${style.content} d-flex flex-column gap-2 bg-white`}>
                                 <div className={`icon fs-1`}>
                                     <TbHeartHandshake />
@@ -51,10 +51,10 @@ export default function WorkProcessing() {
                                     <h4>Browsing & Choosing</h4>
                                     <p className={`text-color`}>This is where customers visit your online store, browse your products.</p>
                                 </div>
-                                <div className={`${style.number}`}>01</div>
+                                <div className={`${style.number}`}>03</div>
                             </div>
                         </Col>
-                        <Col md={3}>
+                        <Col lg={3} md={6} sm={12}>
                             <div className={`${style.content} d-flex flex-column gap-2 bg-white`}>
                                 <div className={`icon fs-1`}>
                                     <TbTruckDelivery />
@@ -63,7 +63,7 @@ export default function WorkProcessing() {
                                     <h4>Browsing & Choosing</h4>
                                     <p className={`text-color`}>This is where customers visit your online store, browse your products.</p>
                                 </div>
-                                <div className={`${style.number}`}>01</div>
+                                <div className={`${style.number}`}>04</div>
                             </div>
                         </Col>
                     </Row>

@@ -1,0 +1,43 @@
+.item {
+    border: 1px dashed var(--darkColor);
+    background-image: url(../../../assets/images/deal/deal-bg.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    padding: 15px;
+    height: 510px;
+}
+
+.item img {
+    height: 320px;
+    width: 280px !important;
+    border-radius: 12px;
+}
+
+.item a {
+    color: var(--darkColor);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.item a:hover {
+    color: var(--mainColor);
+    transition: 0.6s;
+}
+
+/* responsive */
+@media screen and (max-width: 1340px) {
+    .item img {
+        width: 220px !important;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .item {
+        height: 450px;
+    }
+}
+
+/* End Style */

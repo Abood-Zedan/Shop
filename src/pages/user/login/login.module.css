@@ -4,6 +4,19 @@
     background-color: var(--headerColor);
 }
 
+.login_page .loginForm .home {
+    text-decoration: none;
+    color: var(--darkColor);
+    background-color: var(--secColor);
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    align-self: flex-start;
+}
+
 .login_page .loginForm h1 {
     font-size: 55px;
 }
@@ -38,9 +51,32 @@
 .login_page .forgot_password {
     width: 47%;
 }
+
 .login_page .forgot_password a {
     text-decoration: none;
     color: var(--darkColor);
+}
+
+/* responsive */
+@media screen and (max-width: 992px) {
+    .login_page .img {
+        display: none;
+    }
+
+    .login_page {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .loginForm {
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .login_page .loginForm h1 {
+        font-size: 40px;
+    }
 }
 
 /* End Login page */
