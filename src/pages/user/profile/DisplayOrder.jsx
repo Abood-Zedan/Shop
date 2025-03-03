@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom';
-import style from './Profile.module.css'
+import style from './profile.module.css'
 
 export default function DisplayOrder() {
 

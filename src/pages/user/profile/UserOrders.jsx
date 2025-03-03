@@ -5,10 +5,10 @@ import { MdCancel } from "react-icons/md";
 
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import axios from 'axios'
-import style from './Profile.module.css'
 import LoadingPage from '../../../components/user/loading/LoadingPage';
 import { useNavigate } from 'react-router-dom';
 import { Bounce, toast } from 'react-toastify';
+import style from './profile.module.css'
 
 export default function UserOrders() {
 
@@ -98,7 +98,7 @@ export default function UserOrders() {
                     <h3 className='fs-4'>Location : {order.address}</h3>
                     <h4 className='fs-5'>Phone : {order.phoneNumber}</h4>
                     <h5>Total : ${order.finalPrice}</h5>
-                    {order .couponName ? <p className='m-0' >Coupon : {order.couponName}</p> : null}
+                    {order.couponName ? <p className='m-0' >Coupon : {order.couponName}</p> : null}
                     <p className='m-0'>Date : {order.createdAt.slice(0, 10)}</p>
                     {order.status == 'pending' ? <div className='d-flex align-items-center justify-content-between'>Order status : <span><CgSandClock /></span></div> :
                       order.status == 'deliverd' ? <div className='d-flex align-items-center justify-content-between'>Order status : <span><FaTruckFast /></span></div> :
