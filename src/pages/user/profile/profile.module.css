@@ -7,6 +7,28 @@
     padding: 0 2px;
 }
 
+@media screen and (max-width: 1485px) {
+    .row .col2 {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .row .col2 {
+        width: 61%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .row .col2 {
+        width: 50%;
+    }
+}
+
+/********************************/
+
+.userInfo .info {}
+
 .userInfo .icons button {
     border-radius: 50px;
     display: flex;
@@ -91,7 +113,7 @@
 }
 
 .userInfo .details label {
-    width: 8%;
+    width: 100px;
     font-size: 16px;
     font-weight: 500;
 }
@@ -134,6 +156,38 @@
 .userInfo .details .update:hover {
     background: #45a049;
     transition: 0.6s;
+}
+
+/* responsive */
+@media screen and (max-width: 1200px) {
+    .userInfo .img {
+        width: 50%;
+    }
+
+    .userInfo .img label {
+        left: 137%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .userInfo .info {
+        justify-content: flex-start !important;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 632px) {
+    .userInfo .icons {
+        display: none !important;
+    }
+
+    .userInfo .info p {
+        font-size: 14px;
+    }
+
+    .userInfo .img label {
+        left: 157%;
+    }
 }
 
 /******************************************/
@@ -188,4 +242,27 @@
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 14px;
+}
+
+/* responsive */
+@media screen and (max-width: 801px) {
+    .orders .order h3 {
+        font-size: 18px !important;
+    }
+
+    .orders .order h4 {
+        font-size: 16px !important;
+    }
+
+    .orders .order h5 {
+        font-size: 15px !important;
+    }
+
+    .orders .order {
+        gap: 10px;
+    }
+
+    .orders .order .button {
+        gap: 15px;
+    }
 }

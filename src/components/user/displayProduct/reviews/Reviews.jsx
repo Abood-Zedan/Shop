@@ -1,26 +1,26 @@
 import React from 'react'
-import { Card, Row } from 'react-bootstrap'
+import { Card, Col, Container, Row } from 'react-bootstrap'
 import reviewImg from '../../../../assets/images/product/userjpg.jpg'
 import style from './reviews.module.css'
 import Rating from '../../rating/Rating'
 
 export default function Reviews({data}) {
 
-    
+
     return (
         <>
             <section className={`${style.infoAndReviews} mt-5`}>
-                <div className="container-fluid">
+                <Container fluid className='px-5'>
                     <Row className={`${style.row}`}>
-                        <div className="col-4">
+                        <Col lg={4} className="">
                             <div className={`${style.info}`}>
                                 <h4>Additional Information:</h4>
-                                <p className='fw-medium'>Stock: <span className='text-color'>{data.product.stock}</span></p>
-                                <p className='fw-medium'>status: <span className='text-color' >{data.product.status}</span></p>
-                                <p className='fw-medium'>updatedAt: <span className='text-color'>{data.product.updatedAt}</span></p>
+                                <p className='fw-medium'>Stock : <span className='text-color'>{data.product.stock}</span></p>
+                                <p className='fw-medium'>Status : <span className='text-color' >{data.product.status}</span></p>
+                                <p className='fw-medium'>Created At : <span className='text-color'>{data.product.createdAt.slice(0, 10)}</span></p>
                             </div>
-                        </div>
-                        <div className="col-7">
+                        </Col>
+                        <Col lg={7} className="">
                             <div className={`${style.reviews}`}>
                                 <span>Reviews</span>
                                 <h4 className='mt-5'>Customer Reviews: ({data.product.reviews.length})</h4>
@@ -49,9 +49,9 @@ export default function Reviews({data}) {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </Col>
                     </Row>
-                </div>
+                </Container>
             </section>
         </>
     )

@@ -99,8 +99,8 @@ export default function UserInfo() {
         <>
             <section className={`${style.userInfo}`}>
                 <Container className='pt-3'>
-                    <div className={`d-flex justify-content-between align-items-center`}>
-                        <div className="info d-flex flex-column gap-3">
+                    <div className={`${style.info} d-flex justify-content-between align-items-center`}>
+                        <div className="d-flex flex-column gap-3">
                             <div className={`${style.img} position-relative`}>
                                 {user.image != null && !imageChange ? <img src={user.image.secure_url} alt="" className={`rounded-circle`} /> : <img src={image} alt="" className={`rounded-circle`} />}
                                 <Form onSubmit={handleSubmit(updateImage)}>
@@ -148,7 +148,7 @@ export default function UserInfo() {
                             </Form.Group>
                             <Button className={`${style.update}`} onClick={() => { updatePassword() }}>Update Password</Button>
                         </Form>
-                        <p className='d-flex gap-2 mt-4'><div><CiCalendarDate /></div> {user.createdAt}</p>
+                        <p className='d-flex gap-2 mt-4'><div><CiCalendarDate /></div> {user.createdAt.slice(0, 10)}</p>
                     </div>
                 </Container>
             </section>

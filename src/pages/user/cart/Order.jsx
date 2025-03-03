@@ -5,12 +5,14 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import style from './cart.module.css'
 import { useForm } from 'react-hook-form';
 import { Bounce, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 export default function Order() {
 
     const [cart, setCart] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const token = localStorage.getItem('userToken');
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const getCart = async () => {
         try {
             const responce = await axios.get(`https://ecommerce-node4.onrender.com/cart`,
@@ -57,6 +59,7 @@ export default function Order() {
                     theme: "dark",
                     transition: Bounce,
                     });
+                    navigate('/profile/orders')
             }
         } catch (error) {
             toast.error('Error'+ error, {
@@ -81,7 +84,7 @@ export default function Order() {
 
     return (
         <>
-            <section className={`${style.order}`}>
+            <section className={`${style.order} my-5`}>
                 <Container fluid className='px-5'>
                     <h2 className='my-5 text-center'>Your Order</h2>
                     <Row className={`justify-content-between row-gap-3`}>

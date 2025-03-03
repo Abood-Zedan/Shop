@@ -12,15 +12,15 @@ export default function CustomNavbar() {
     const { cartCount } = useContext(CartContext);
     const { setUser } = useContext(UserContext);
     const token = localStorage.getItem('userToken');
-    const navigat = useNavigate();
+    const navigate = useNavigate();
 
     const userLogin = () => {
-        navigat('/auth/login')
+        navigate('/auth/login')
     }
     const userLogout = () => {
         localStorage.removeItem('userToken');
         setUser(null)
-        navigat('/auth/login')
+        navigate('/auth/login')
     }
 
     return (
@@ -41,14 +41,14 @@ export default function CustomNavbar() {
                             <Nav.Link as={Link} to={'/Login'} className='fw-semibold'>About As</Nav.Link>
                             <Nav.Link as={Link} to={'/contact'} className='fw-semibold'>Contact</Nav.Link>
                         </Nav>
-                        <Nav className='gap-4 align-items-center'>
+                        <Nav className={` ${style.info} gap-4 align-items-center`}>
                             <div className={`${style.deals} fs-5`}>
                                 <i className="fa-solid fa-fire" /> Deal
                             </div>
                             <div className={`${style.star}`}><i className="fa-solid fa-star"></i></div>
                             <div className='Wishlist fs-5'><i className="fa-regular fa-heart"></i></div>
                             <div className={`${style.star}`}><i className="fa-solid fa-star"></i></div>
-                            <div className={`${style.cart} fs-5 position-relative`}>
+                            <div onClick={() => {navigate('/cart')}} className={`${style.cart} fs-5 position-relative`}>
                                 <i className="fa-solid fa-bag-shopping"></i>
                                 {cartCount != 0 ? <span className="position-absolute translate-middle badge rounded-pill bg-danger">
                                     {cartCount}

@@ -120,3 +120,34 @@ table td {
     background-color: var(--mainColor);
     transition: 0.5s;
 }
+
+/* responsive */
+@media screen and (max-width: 700px) {
+    table {
+        font-size: 80%;
+    }
+    .cart tbody a {
+        font-size: 12px !important;
+    }
+    .cart tbody .test {
+        flex-direction: column;
+    }
+    .cart tbody .quantity button {
+        padding: 5px 10px;
+    }
+
+}
+@media screen and (max-width: 576px) {
+    table>thead {
+        font-size: 10px;
+    }
+    .cart tbody img {
+        height: 90px;
+        width: 55%;
+    }
+    .cart tbody .info {
+        gap: 5px !important;
+    }
+}
+
+/* End Style */

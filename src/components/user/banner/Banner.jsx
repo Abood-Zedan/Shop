@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 export default function Banner() {
     return (
         <>
-            <section className={`${style.banner} px-5`}>
+            <section className={`${style.banner} px-5 my-5`}>
                 <Container fluid>
                     <Row className='row-gap-3'>
                         <Col lg={6}>

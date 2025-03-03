@@ -235,7 +235,7 @@ export default function Cart() {
                 <section className={`${style.cart}`}>
                     <Container fluid>
                         <Row>
-                            <Col md={9}>
+                            <Col xl={9} >
                                 <div>
                                     <Table>
                                         <thead>
@@ -250,14 +250,14 @@ export default function Cart() {
                                             {cart.map(item =>
                                                 <tr key={item.details._id}>
                                                     <td className='text-center'>
-                                                        <div className='d-flex gap-4'>
+                                                        <div className={`${style.info} d-flex gap-4`}>
                                                             <img src={item.details.mainImage.secure_url} alt="" className='' />
                                                             <Link to={`/cart/${item.details._id}`} className='fs-6'>{item.details.name}</Link>
                                                         </div>
                                                     </td>
                                                     <td className='text-center'>${item.details.finalPrice}</td>
                                                     <td className='text-center'>
-                                                        <div className='d-flex justify-content-center align-items-center gap-2'>
+                                                        <div className={`${style.test} d-flex justify-content-center align-items-center gap-2`}>
                                                             <div className={`${style.quantity}`}>
                                                                 <Button onClick={() => decProduct(item.productId)} disabled={loading}>-</Button>
                                                                 <span className='px-3'>{item.quantity}</span>
@@ -277,7 +277,7 @@ export default function Cart() {
                                     </div>
                                 </div>
                             </Col>
-                            <Col md={3}>
+                            <Col xl={3} >
                                 <div className={`${style.price}`}>
                                     <h4>Cart Totals</h4>
                                     <h5 className={`${style.border}`}>Subtotal: <span>${cart.reduce((acc, item) => acc + (item.details.finalPrice * item.quantity), 0)}</span></h5>

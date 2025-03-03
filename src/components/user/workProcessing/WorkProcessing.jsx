@@ -17,7 +17,7 @@ export default function WorkProcessing() {
                         <span><GiFireflake /> <span className={`main-color fw-semibold`}>Work Processing</span> <GiFireflake /></span>
                         <h3 className={`fs-2 fw-bold`}>How it Work processing</h3>
                     </div>
-                    <Row>
+                    <Row className='row-gap-3'>
                         <Col lg={3} md={6} sm={12}>
                             <div className={`${style.content} d-flex flex-column gap-2 bg-white`}>
                                 <div className={`icon fs-1`}>

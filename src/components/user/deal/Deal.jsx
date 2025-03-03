@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 export default function Deal() {
     return (
         <>
-            <section className={`${style.deal} mb-5`}>
+            <section className={`${style.deal} my-5`}>
                 <Container fluid className='px-5'>
                     <div className={`${style.itme}`}>
                         <div className={`${style.text}`}>
@@ -34,7 +34,7 @@ export default function Deal() {
                                     <span>Seconds</span>
                                 </div>
                             </div>
-                            <Link>Shop Now</Link>
+                            <Link to={'/products'}>Shop Now</Link>
                         </div>
                         <div className={`${style.img}`}>
                             <img src={mainImg} alt="" className='w-100' />

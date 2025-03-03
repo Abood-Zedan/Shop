@@ -1,7 +1,5 @@
 .product .imgs_product {
     align-items: center;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 25px;
 }
@@ -154,3 +152,22 @@
     background-color: var(--secLightColor);
     font-size: 16px;
 }
+
+/* responsive */
+@media screen and (max-width: 992px) {
+    .product .order {
+        border-bottom: 1px solid #E7E8EB;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .product .subImg {
+        text-align: center;
+    }
+
+    .product .subImg img {
+        width: 60% !important;
+    }
+}
+
+/* End Style */

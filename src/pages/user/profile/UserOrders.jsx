@@ -15,6 +15,7 @@ export default function UserOrders() {
   const [isLoading, setISLoading] = useState(true);
   const [orders, setOrders] = useState();
   let count = 1;
+  const [loading, setLoading] = useState(false);
   const navigat = useNavigate();
   const token = localStorage.getItem('userToken')
   const getOrder = async () => {
@@ -35,6 +36,7 @@ export default function UserOrders() {
   }
 
   const cancelOrder = async (orderId) => {
+    setLoading(true);
     try {
       const response = await axios.patch(`https://ecommerce-node4.onrender.com/order/cancel/${orderId}`,
         null,
@@ -58,7 +60,19 @@ export default function UserOrders() {
         });
       }
     } catch (error) {
-      console.log(error)
+      toast.error('Error' + error, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -84,13 +98,14 @@ export default function UserOrders() {
                     <h3 className='fs-4'>Location : {order.address}</h3>
                     <h4 className='fs-5'>Phone : {order.phoneNumber}</h4>
                     <h5>Total : ${order.finalPrice}</h5>
-                    <p className='m-0'>Date : {order.createdAt}</p>
+                    {order .couponName ? <p className='m-0' >Coupon : {order.couponName}</p> : null}
+                    <p className='m-0'>Date : {order.createdAt.slice(0, 10)}</p>
                     {order.status == 'pending' ? <div className='d-flex align-items-center justify-content-between'>Order status : <span><CgSandClock /></span></div> :
                       order.status == 'deliverd' ? <div className='d-flex align-items-center justify-content-between'>Order status : <span><FaTruckFast /></span></div> :
                         <div className='d-flex align-items-center justify-content-between'>Order status : <span><MdCancel /></span></div>}
                     <div className={`${style.button} d-flex justify-content-between align-items-center`}>
                       <Button onClick={() => navigat(`/profile/displayOrder/${order._id}`)} disabled={order.status == 'cancelled'}>Details</Button>
-                      <Button onClick={() => cancelOrder(order._id)} disabled={order.status != 'pending'}>Cancel</Button>
+                      <Button onClick={() => cancelOrder(order._id)} disabled={order.status != 'pending' || loading}>{loading ? 'Loading' : 'Cancel'}</Button>
                     </div>
                   </div>
                 </Col>

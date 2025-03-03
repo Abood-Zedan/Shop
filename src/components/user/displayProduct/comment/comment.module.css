@@ -36,4 +36,10 @@
     transition: all 0.3s ease-in;
 }
 
+/* responsive */
+@media screen and (max-width: 576px) {
+    .comment {
+        justify-content: center;
+    }
+}
 /* End Style */

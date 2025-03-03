@@ -1,0 +1,5 @@
+@media screen and (max-width: 992px) {
+    .operation form {
+        justify-content: center !important;
+    }
+}
