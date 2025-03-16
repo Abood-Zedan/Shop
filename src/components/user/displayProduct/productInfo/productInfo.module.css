@@ -9,13 +9,8 @@
     border-radius: 16px;
 }
 
-.product .imgs_product .main_img {
-    text-align: center;
-    width: 100%;
-}
-
-.product .imgs_product .main_img img {
-    width: 60%;
+.product .img {
+    width: 60% !important;
 }
 
 .product .discount {

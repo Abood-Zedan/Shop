@@ -8,7 +8,23 @@ import { CartContext } from '../../context/CartContext';
 import { preinit } from 'react-dom';
 import Rating from '../../rating/Rating';
 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+// import './styles.css';
+
+// import required modules
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+
 export default function ProductInfo({ data, productId }) {
+
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 
     const [countReviews, setCountReviews] = useState(data.product.reviews.length);
@@ -66,22 +82,47 @@ export default function ProductInfo({ data, productId }) {
             <Container fluid className='px-5'>
                 <Row className="mx-0 row-gap-5">
                     <Col lg={6} className="">
-                        <div className={`${style.imgs_product} d-flex flex-column gap-5`}>
-                            <div className={`${style.main_img}`}>
-                                <img src={data.product.mainImage.secure_url} alt="" />
-                            </div>
-                            <div className={`${style.subImg} px-4`}>
-                                <Row className="justify-content-evenly align-items-center row-gap-4">
-                                    {
-                                        data.product.subImages.map(image =>
-                                            <Col md={3} sm={6} key={data.product._id}>
-                                                <img src={image.secure_url} alt="" className='w-100' />
-                                            </Col>
-                                        )
-                                    }
-                                </Row>
-                            </div>
-                        </div>
+                        <Swiper
+                            style={{
+                                '--swiper-navigation-color': '#fff',
+                                '--swiper-pagination-color': '#fff',
+                            }}
+                            spaceBetween={10}
+                            thumbs={{ swiper: thumbsSwiper }}
+                            modules={[FreeMode, Navigation, Thumbs]}
+                            className="mySwiper2 mb-4"
+                        >
+                            <SwiperSlide className='d-flex justify-content-center align-items-center'>
+                                <img src={data.product.mainImage.secure_url} className={`${style.img}`} />
+                            </SwiperSlide>
+                            {
+                                data.product.subImages.map(image =>
+                                    <SwiperSlide key={data.product._id} className='d-flex justify-content-center align-items-center'>
+                                        <img src={image.secure_url} alt="" className={`${style.img}`} />
+                                    </SwiperSlide>
+                                )
+                            }
+                        </Swiper>
+                        <Swiper
+                            onSwiper={setThumbsSwiper}
+                            spaceBetween={10}
+                            slidesPerView={4}
+                            freeMode={true}
+                            watchSlidesProgress={true}
+                            modules={[FreeMode, Navigation, Thumbs]}
+                            className="mySwiper"
+                        >
+                            <SwiperSlide>
+                                <img src={data.product.mainImage.secure_url} className='w-100' />
+                            </SwiperSlide>
+                            {
+                                data.product.subImages.map(image =>
+                                    <SwiperSlide md={3} sm={6} key={data.product._id}>
+                                        <img src={image.secure_url} alt="" className='w-100' />
+                                    </SwiperSlide>
+                                )
+                            }
+                        </Swiper>
                     </Col>
                     <Col lg={6} className="">
                         <div className="info-product d-flex flex-column gap-3">

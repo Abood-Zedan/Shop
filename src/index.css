@@ -132,6 +132,11 @@ body {
     border-color: var(--borderColor);
 }
 
+.swiper-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* responsive */
 @media screen and (max-width: 1050px) {
     .swiper-button-prev {
